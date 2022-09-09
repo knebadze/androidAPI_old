@@ -157,8 +157,8 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
-          <li class="nav-item dropdown">
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+          {{-- <li class="nav-item dropdown">
             <a id="navbarDropdown" class="d-block dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }}
             </a>
@@ -174,7 +174,7 @@
                     @csrf
                 </form>
             </div>
-        </li>
+        </li> --}}
         </div>
       </div>
 
@@ -826,7 +826,19 @@
               <p>Level 1</p>
             </a>
           </li>
-          <li class="nav-header">LABELS</li>
+          <li class="nav-item">
+               <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                                 <i class="fas fa-sign-out-alt nav-icon"></i>
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+                </li>
+          {{-- <li class="nav-header">LABELS</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-danger"></i>
@@ -844,7 +856,7 @@
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Informational</p>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

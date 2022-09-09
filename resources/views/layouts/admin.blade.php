@@ -29,11 +29,11 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        @include('inc/admin.navbar')
+        @include('inc.admin_navbar')
 
         @yield('content')
 
-        @include('inc/admin.footer')
+        @include('inc.admin_footer')
     </div>
     <!-- ./wrapper -->
 

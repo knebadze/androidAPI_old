@@ -24,7 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth', 'admin'])->group(function () {
 
-    route::get('admin/role', RoleController::class, 'index')->name('role');
-    route::get('admin/permission', RoleController::class, 'index')->name('permission');
+    // route::get('admin/role', RoleController::class, 'index')->name('role');
+    // route::get('admin/permission', RoleController::class, 'index')->name('permission');
 });
 

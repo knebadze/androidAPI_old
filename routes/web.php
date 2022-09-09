@@ -24,9 +24,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth', 'admin'])->group(function () {
+// Route::middleware(['auth', 'admin'])->group(function () {
 
     route::get('admin/role', [RoleController::class], 'index')->name('role');
     route::get('admin/permission', [PermissionController::class], 'index')->name('permission');
-});
+// });
 

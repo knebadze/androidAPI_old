@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if ('role:admin') {
+            return view('admin/dashboard');
+        } else {
+            return view('home');
+        }
+
+
     }
 }

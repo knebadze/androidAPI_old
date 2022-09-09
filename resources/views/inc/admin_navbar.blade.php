@@ -226,7 +226,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{route('role')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Role
@@ -235,7 +235,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{route('permission')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Permission

@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\PermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth', 'admin'])->group(function () {
 
-    // route::get('admin/role', RoleController::class, 'index')->name('role');
-    // route::get('admin/permission', RoleController::class, 'index')->name('permission');
+    route::get('admin/role', [RoleController::class], 'index')->name('role');
+    route::get('admin/permission', [PermissionController::class], 'index')->name('permission');
 });
 

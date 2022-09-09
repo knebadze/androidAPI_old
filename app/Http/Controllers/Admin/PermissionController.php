@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
 
 class PermissionController extends Controller
 {
@@ -14,7 +15,8 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+
+        return view('admin/permission');
     }
 
     /**

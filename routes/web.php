@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,10 @@ Route::get('', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth', 'admin'])->group(function () {
+
+    route::get('admin/role', RoleController::class, 'index')->name('role');
+    route::get('admin/permission', RoleController::class, 'index')->name('permission');
+});
 

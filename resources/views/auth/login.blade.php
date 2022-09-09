@@ -113,7 +113,7 @@
           <div class="row">
             <div class="col-8">
               <div class="icheck-primary">
-                <input type="checkbox" id="remember">
+                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                 <label for="remember">
                   Remember Me
                 </label>
@@ -139,10 +139,14 @@
         <!-- /.social-auth-links -->
 
         <p class="mb-1">
-          <a href="forgot-password.html">I forgot my password</a>
+            @if (Route::has('password.request'))
+            <a class="btn btn-link" href="{{ route('password.request') }}">
+                {{ __('Forgot Your Password?') }}
+            </a>
+        @endif
         </p>
         <p class="mb-0">
-          <a href="register.html" class="text-center">Register a new membership</a>
+          <a href="{{route('register')}}" class="text-center">Register a new membership</a>
         </p>
       </div>
       <!-- /.login-card-body -->

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('', function () {
-//     return view('login');
-// });
-route::get('login', HomeController::class, 'welcome');
+Route::get('/', function () {
+    return view('auth/login');
+});
+// route::get('auth/login', [HomeController::class], 'welcome');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
